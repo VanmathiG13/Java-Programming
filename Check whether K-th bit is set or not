@@ -1,0 +1,31 @@
+public static void main(String []args){
+        System.out.println(checkKthBit(5789,25));
+     }
+     static boolean checkKthBit(int n, int k)
+    {
+        String s="";
+        int i;
+        while(n>1)
+        {
+            int rem=n%2;
+            n/=2;
+            s+=rem;
+        }
+        s+=1;
+        String temp="";
+        for(i=s.length()-1;i>=0;i--)
+        {
+            temp+=s.charAt(i);
+        }
+        int index=(temp.length()-k)-1;
+        if(temp.charAt(index)=='1')
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    
+    }
+}
